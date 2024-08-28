@@ -41,7 +41,8 @@ for row in df.itertuples():
     tdf.loc[tdf['User'] == user, prob] = score
 
 # 総計を計算
-tdf = pd.concat([tdf, pd.DataFrame(tdf.sum(axis=1),columns=['Total'])],axis=1)
+total_df=pd.DataFrame(tdf.select_dtypes(include=['number']).sum(axis=1),columns=['Total'])
+tdf = pd.concat([tdf, total_df],axis=1)
 
 # CSVに書き出し
 print(tdf)

@@ -1,0 +1,6 @@
+# prefixes of usernames to exclude (one per line)
+ta
+y24m
+y25m
+student
+sano
